@@ -22,5 +22,8 @@ class ViewController: UIViewController {
     }
 
 
+    /*
+     NewFunction브랜치 적용된 내용
+     */
 }
 
