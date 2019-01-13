@@ -35,6 +35,8 @@ class ViewController: UIViewController {
     // 헤드 브랜치에 추가적인 작업이 필요
     
     //version4에 주석작업!!!!!!!!!!!
+    
+    // 마스터에 충돌 주석 추가
 
 }
 
