@@ -46,5 +46,9 @@ class ViewController: UIViewController {
     
     // gitignore refresh
     
+    
+    //여기서는 이니시스 결제 작업이 진행될겁니다
+    //결제와관련된 사항이라 많은 테스트가 필요하니 신중한 코딩 바랍니다.
+    
 }
 
