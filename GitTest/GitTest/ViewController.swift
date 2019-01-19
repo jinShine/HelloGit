@@ -62,5 +62,7 @@ class ViewController: UIViewController {
     //브런치에 커밋내용 달기
 
 
+    // 기타
+    // .. TEST2 커밋2
 }
 
