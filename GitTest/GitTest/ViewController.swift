@@ -61,9 +61,6 @@ class ViewController: UIViewController {
 
     //브런치에 커밋내용 달기
 
-    //리버트 되돌리기용
-    // 리버트트트트트트트트트
-    
 
 }
 
