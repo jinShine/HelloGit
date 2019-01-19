@@ -46,5 +46,13 @@ class ViewController: UIViewController {
     
     // gitignore refresh
     
+
+    
+    //에러났었네
+    
+    /// 에러
+    /// 에러
+    /// 에러
+    
 }
 
