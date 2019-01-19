@@ -54,6 +54,9 @@ class ViewController: UIViewController {
     /// 에러
     /// 에러
     /// 에러
+    
+    
+    //브런치에 커밋내용 달기
 
 }
 
