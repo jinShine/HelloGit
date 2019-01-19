@@ -46,5 +46,8 @@ class ViewController: UIViewController {
     
     // gitignore refresh
     
+    
+    // 이젠 gitignore안정화되었겠지.
+    
 }
 
