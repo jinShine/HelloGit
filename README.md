@@ -1,2 +1,1 @@
-# HelloGit
-git 및 github 공부용
+8주간 진행하는 Web 세미나
