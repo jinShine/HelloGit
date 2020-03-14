@@ -1,0 +1,26 @@
+.wrap {
+    font-family: 'Black Han Sans', sans-serif;
+    font-family: 'Cute Font', cursive;
+
+    width: 500px;
+    margin: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-content{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.item-content > h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    margin-right: 10px;
+}
