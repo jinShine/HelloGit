@@ -18,4 +18,8 @@
 ---
 * Javascript 기초 문법
 * jQuery로 간단한 HTML을 조작
+
+**4Day**
+---
+* Javascript + jQuery 연습
 * Ajax 통신 기초
