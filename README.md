@@ -23,3 +23,8 @@
 ---
 * Javascript + jQuery 연습
 * Ajax 통신 기초
+
+**5Day**
+---
+* ajax 연습
+* 연습문제로 Javascript + jQuery + Ajax 익히기
