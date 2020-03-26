@@ -28,3 +28,11 @@
 ---
 * ajax 연습
 * 연습문제로 Javascript + jQuery + Ajax 익히기
+
+**6Day**
+---
+* 파이썬 기초 문법
+* OpenAPI에 요청해서 데이터 가져와 보기(requests 이용)
+* 페이지 크롤링 해보기(beautifulsoup4 이용)
+
+
