@@ -35,4 +35,8 @@
 * OpenAPI에 요청해서 데이터 가져와 보기(requests 이용)
 * 페이지 웹스크래핑 해보기(beautifulsoup4 이용)
 
+**7Day**
+---
+* mongoDB 기초 개념
+* pymongo를 통해 mongoDB 다뤄보기
 
