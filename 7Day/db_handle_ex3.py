@@ -1,39 +1,48 @@
-# 영화 스크래핑 후 DB에 저장하기 방법
+# -----------------------------------------------------------------------------
+# 웹스크래핑 결과를 DB를 가지고 find, update 연습해보기
+# -----------------------------------------------------------------------------
 
-import requests
-from bs4 import BeautifulSoup
+from pymongo import MongoClient
 
-from pymongo import MongoClient           # pymongo를 임포트 하기(패키지 인스톨 먼저 해야겠죠?)
-client = MongoClient('localhost', 27017)  # mongoDB는 27017 포트로 돌아갑니다.
-db = client.dbmovies
+client = MongoClient('localhost', 27017)
+db = client.movie_db # Database
+rank_collection = db.rank # collections
 
-# URL을 읽어서 HTML를 받아오고,
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-data = requests.get('https://movie.naver.com/movie/sdb/rank/rmovie.nhn?sel=pnt&date=20200303', headers=headers)
+# 문제 1
+# 어벤져스: 엔드게임'의 평점을 가져오기
 
-# HTML을 BeautifulSoup이라는 라이브러리를 활용해 검색하기 용이한 상태로 만듦
-soup = BeautifulSoup(data.text, 'html.parser')
+avengers_movie = rank_collection.find_one({'title':'어벤져스: 엔드게임'})
+avengers_star = avengers_movie.get('star')
+print(avengers_star)
 
-# select를 이용해서, tr들을 불러오기
-movies = soup.select('#old_content > table > tbody > tr')
+# # 문제 2
+# # '어벤져스: 엔드게임'의 평점과 같은 평점의 영화 제목들을 가져오기
 
-# movies (tr들) 의 반복문을 돌리기
-rank = 1
-for movie in movies:
-    # movie 안에 a 가 있으면,
-    a_tag = movie.select_one('td.title > div > a')
-    if a_tag is not None:
-        title = a_tag.text
-        star = movie.select_one('td.point').text
-        print(rank, title, star)
+target_star_list = rank_collection.find({'star': avengers_star})
 
-        movie_info = {
-            'rank': rank,
-            'title': title,
-            'star': star
-        }
+for target_star in target_star_list:
+    print(target_star.get('title'))
 
-        db.movies.insert_one(movie_info)
+# # 문제 3
+# # '어벤져스: 엔드게임'의 평점과 같은 평점의 영화 제목들의 평점을 0으로 만들기
+rank_collection.update_many({'star': avengers_star}, {'$set': {'star': '0'}})
 
-        rank += 1
+
+# # 문제 4
+# # 1~20등 까지 평균 구하기
+
+movies = rank_collection.find()
+
+def average_star(movies):
+    sum_value = 0.0
+
+    for movie in movies:
+        if movie['rank'] > 20:
+            break
+
+        star = float(movie.get('star'))
+        sum_value += star
+
+    return (sum_value / 20)
+
+print(average_star(movies))
