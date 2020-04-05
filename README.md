@@ -40,3 +40,9 @@
 * mongoDB 기초 개념
 * pymongo를 통해 mongoDB 다뤄보기
 
+**8Day**
+---
+* Flask 기초
+* GET, POST API 만들어보기(jsonify)
+* mongoDB를 이용해서 함께 다뤄보기
+
