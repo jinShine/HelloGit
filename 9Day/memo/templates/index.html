@@ -49,21 +49,38 @@
         data: {},
         success: function (response) {
           if (response['result'] == 'success') {
-            alert(response['msg']);
+            let articles = response['articles'];
+            articles.forEach(item => {
+                make_card(item.comment, item.desc, item.image, item.title, item.url)
+            })
           }
         }
       })
     }
 
     function make_card(comment, desc, image, title, url) {
-
+        let cardsBoxTag = '<div class="card">\
+            <img class="card-img-top" src="'+ image + '" alt="Card image cap">\
+            <div class="card-body">\
+            <a href="'+ url + '" class="card-title">' + title + '</a>\
+            <p class="card-text">'+ desc + '</p>\
+            <p class="card-text comment">'+ comment + '</p>\
+            </div>\
+            </div>';
+        $('#cards-box').append(cardsBoxTag)
     }
 
     function posting() {
+        let $postingURL = $('#posting-url').val();
+        let $postingComment = $('#posting-comment').val();
+
       $.ajax({
         type: "POST",
         url: "/memo",
-        data: {},
+        data: {
+            'posting_url': $postingURL,
+            'posting_comment': $postingComment
+        },
         success: function (response) { // 성공하면
           if (response['result'] == 'success') {
             alert(response['msg']);
