@@ -1,0 +1,77 @@
+<!-- 폼
+
+1. 기본 구조
+<form action="" method=""></form>
+    * action -> API 주소
+    * method -> GET|POST
+-->
+
+
+<!-- Input -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Input</title>
+  <link rel="stylesheet" href="https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="./Practice-8.css">
+</head>
+<body>
+
+    <!-- Input Attribute
+
+        minlength -> 최소값
+        maxlength -> 최대값
+        min -> type이 number일때 최소값
+        max -> type이 number일때 최대값
+        required -> 필수로 입력되어야 한다.
+        disabled -> 사용하지 못하게 막아둔다.
+        value -> 기본 디폴트 값
+        accept -> type이 file일때 허용하고 싶은 확장자 선택
+    -->
+
+    <form action="" method="GET">
+        <input type="text" placeholder="이름을 입력하세요." minlength="3" maxlength="5" disabled>
+        <input type="text" placeholder="비밀번호를 입력하세요." minlength="3" maxlength="5" required value="123123123">
+        <button>
+            Submit
+        </button>
+    </form>
+
+
+
+
+    <br/>
+
+    <form action="" method="GET">
+        <div>
+            <input type="text" placeholder="이름을 입력해주세요." required/>
+        </div>
+        <div>
+            <input type="text" placeholder="아이디를 입력해주세요." minlength="5" maxlength="10"/>
+        </div>
+        <div>
+            <input type="password" placeholder="비밀번호를 입력해주세요." minlength="6" maxlength="12"/>
+        </div>
+        <div>
+            <input type="email" placeholder="이메일을 입력해주세요." />
+        </div>
+        <div>
+            <input type="tel" placeholder="000-0000-000형식" />
+        </div>
+        <div>
+            <input type="number" placeholder="12세 이상 122세 이하" min="12" max="122"/>
+        </div>
+        <div>
+            <input type="file" accept=".png, .jpg, .html" placeholder="PNG, JPG만 허용">
+        </div>
+
+        <button>
+            Submit
+        </button>
+    </form>
+    
+    
+</body>
+</html>
