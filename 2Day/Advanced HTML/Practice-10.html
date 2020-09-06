@@ -1,0 +1,38 @@
+<!-- 라디오, 체크박스
+
+        * name으로 그룹화(연관) 해줘야 라디오버튼이 중복으로 선택이 안됨!
+        * 서버로 데이터가 전달될때 name은 key, value는 value로 전달 되기 때문에 둘다 꼭 써줘야된다.
+-->
+
+<!-- Input -->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Input</title>
+</head>
+<body>
+
+    <form action="" method="GET">
+        <!--name으로 그룹핑 해줘야된다. -->
+        <input type="radio" name="subscription" value="1" id="subscribed">
+        <label for="subscribed">구독중</label>
+
+        <input type="radio" name="subscription" value="2" id="unsubscribed">
+        <label for="unsubscribed">미구독</label>
+
+        <br/>
+
+        <input type="checkbox" id="html" name="skills" value="html">
+        <label for="html">html</label>
+        <input type="checkbox" id="swift" name="skills" value="swift">
+        <label for="swift">swift</label>
+
+        <br/>
+        <button type="submit">
+            submit
+        </button>
+    </form>
+</body>
+</html>
