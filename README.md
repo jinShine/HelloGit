@@ -13,6 +13,7 @@
 ---
 * Bootstrap 다루기
 * HTML + CSS + Bootstrap 실습
+* (심화) HTML Element 디테일하게 알아보기
 
 **3Day**
 ---
@@ -55,5 +56,3 @@
 **10Day**
 ---
 * 프로젝트2 (배운 것 전부 적용해 보기)
-
-   
